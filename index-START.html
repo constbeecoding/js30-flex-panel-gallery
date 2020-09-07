@@ -94,10 +94,15 @@
     }
 
     .panel.open {
-      font-size: 40px;
       flex: 5;
+      font-size: 40px;
     }
 
+    @media only screen and (max-width: 600px) {
+      .panel p {
+        font-size: 1em;
+      }
+    }
   </style>
 
 
@@ -134,11 +139,12 @@
   const panels = document.querySelectorAll('.panel');
 
   function toggleOpen() {
+    console.log('Hello');
     this.classList.toggle('open');
   }
 
   function toggleActive(e) {
-    //this.classList.toggle('open-active');
+    console.log(e.propertyName);
     if(e.propertyName.includes('flex')) {
       this.classList.toggle('open-active');
     }
